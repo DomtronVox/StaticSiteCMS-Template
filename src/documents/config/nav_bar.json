@@ -1,11 +1,11 @@
 {
   "nav_bar_config_list": [
     {
-      "navTitle": "Doom",
+      "nav_text": "Doom",
       "nav_bar_entry": "dooooom"
     },
     {
-      "navTitle": "About",
+      "nav_text": "About",
       "nav_bar_entry": "About Dooom!"
     }
   ]
