@@ -7,8 +7,21 @@ media_folder: src/files/images/
 public_folder: images/
 
 collections: # A list of collections the CMS should be able to edit
-  - name: "main_page"
-    label: "Main Pages"
+  - label: "Site Configuration"
+    name: "site_config
+    files:
+      - label: "Navigation Bar"
+        name: "nav_bar_config"
+        file: "src/config/nav_bar.json"
+        fields:
+          - label: "Navigation Bar Pages and Order"}
+            name: "nav_bar_config_list"
+            widget: "list"
+            fields: 
+              - {label: "Navigation Bar Entry", name: "nav_bar_entry", widget: "relation", collection: "pages", searchFields: ["title"], valueField: "slug", displayFields: ["title"]}
+              
+  - name: "pages"
+    label: "Pages"
     folder: "src/documents"
     create: true
     slug: "{{slug}}"
