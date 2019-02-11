@@ -14,7 +14,7 @@ collections: # A list of collections the CMS should be able to edit
         name: "nav_bar_config"
         file: "src/config/nav_bar.json"
         fields:
-          - label: "Navigation Bar Pages and Order"}
+          - label: "Navigation Bar Pages and Order"
             name: "nav_bar_config_list"
             widget: "list"
             fields: 
