@@ -1,0 +1,19 @@
+{
+  "source": "src/documents",
+  "destination": "build",
+  "metadata": {
+    "brand": "Dozy Doe Down LLC"
+   ,"siteTitle": "Dozy Doe Down"
+   ,"siteDesc": "Nigerian Dwarf Dary Goats and more"
+   ,"url": "http://www.dozydoedown.com/"
+  },
+  "plugins": [
+    {"metalsmith-assets-improved": {"src":"src/files"}}
+   ,{"metalsmith-collections": {}}
+   ,{"metalsmith-pagination":{}}
+   ,{"metalsmith-paths": true }
+   ,{"./lib/debug.js":true}
+   ,{"metalsmith-in-place": true}
+   ,{"metalsmith-layouts": {"directory":"src/templates"}}
+  ]
+}

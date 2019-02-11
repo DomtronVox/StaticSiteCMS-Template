@@ -1,0 +1,4 @@
+ul(class="nav")
+    each page in collections.MainPage
+        li 
+            a(href=page.path.dhref + page.path.name + ".html") #{page.title}

@@ -1,0 +1,27 @@
+backend:
+  name: github
+  repo: DomtronVox/StaticTemplateSite # Path to your Github repository
+  branch: master # Branch to update
+
+media_folder: src/files/images/
+public_folder: images/
+
+collections: # A list of collections the CMS should be able to edit
+  - name: "main_page"
+    label: "Main Pages"
+    folder: "src/documents/main_pages"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string", tagname: "h1"}
+      - {label: "Navigation Bar Text", name: "navTitle", widget: "string"}
+      - {label: "Navigation bar priority (lower=farther left)", name: "navPriority", widget: "number"}
+      - {label: "Body", name: "body", widget: "markdown"}
+      #hidden fields are not editable by the user but still show up in the file's front matter
+      - {label: "Collection", name: "collection", widget: "hidden", default: "MainPage"}
+      - {label: "Layout", name: "layout", widget: "hidden", default: "default.html"}
+    meta: #no clue what meta does. Didn't work as I was expecting.
+      - {label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD hh:mm:ss"} 
+      
+      
+
