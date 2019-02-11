@@ -8,17 +8,19 @@ public_folder: images/
 
 collections: # A list of collections the CMS should be able to edit
   - label: "Site Configuration"
-    name: "site_config
+    name: "site_config"
     files:
       - label: "Navigation Bar"
         name: "nav_bar_config"
-        file: "src/config/nav_bar.json"
+        file: "src/documents/config/nav_bar.json"
         fields:
           - label: "Navigation Bar Pages and Order"
             name: "nav_bar_config_list"
             widget: "list"
-            fields: 
-              - {label: "Navigation Bar Entry", name: "nav_bar_entry", widget: "relation", collection: "pages", searchFields: ["title"], valueField: "slug", displayFields: ["title"]}
+            fields:
+              - {label: "Navigation Bar Text", name: "navTitle", widget: "string"} 
+              - {label: "Navigation Bar Page", name: "nav_bar_entry", widget: "relation", collection: "pages", searchFields: ["title"], valueField: "title", displayFields: ["title"]}
+  
               
   - name: "pages"
     label: "Pages"
@@ -27,7 +29,6 @@ collections: # A list of collections the CMS should be able to edit
     slug: "{{slug}}"
     fields:
       - {label: "Title", name: "title", widget: "string", tagname: "h1"}
-      - {label: "Navigation Bar Text", name: "navTitle", widget: "string"}
       - {label: "Navigation bar priority (lower=farther left)", name: "navPriority", widget: "number"}
       - {label: "Body", name: "body", widget: "markdown"}
       #hidden fields are not editable by the user but still show up in the file's front matter
