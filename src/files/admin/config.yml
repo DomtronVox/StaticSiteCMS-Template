@@ -18,9 +18,14 @@ collections: # A list of collections the CMS should be able to edit
             name: "nav_bar_config_list"
             widget: "list"
             fields:
-              - {label: "Navigation Bar Text", name: "navTitle", widget: "string"} 
+              - {label: "Navigation Bar Text", name: "nav_text", widget: "string"} 
               - {label: "Navigation Bar Page", name: "nav_bar_entry", widget: "relation", collection: "pages", searchFields: ["title"], valueField: "title", displayFields: ["title"]}
-  
+              - label: "Navigation Bar Pages and Order"
+                name: "nav_bar_sub_config_list"
+                widget: "list"
+                fields:
+                  - {label: "Navigation Bar Text Sub Menu", name: "nav_text", widget: "string"} 
+                  - {label: "Navigation Bar Page Sub Menu", name: "nav_bar_sub_entry", widget: "relation", collection: "pages", searchFields: ["title"], valueField: "title", displayFields: ["title"]}
               
   - name: "pages"
     label: "Pages"
