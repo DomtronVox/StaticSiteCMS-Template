@@ -7,25 +7,34 @@ media_folder: src/files/images/
 public_folder: images/
 
 collections: # A list of collections the CMS should be able to edit
-  - label: "Site Configuration"
+  - label: "Site Settings"
     name: "site_config"
     files:
-      - label: "Navigation Bar"
-        name: "nav_bar_config"
-        file: "src/documents/config/nav_bar.json"
+      - label: "General Settings"
+        name: "general_config"
+        file: "src/documents/config/site.json"
         fields:
-          - label: "Navigation Bar Pages and Order"
-            name: "nav_bar_config_list"
+          - {label: "Site's 'Brand' (e.g. Company Inc.)", name: "brand", widget: "string"}
+          - {label: "Site's Title (added to front of page titles)", name: "title", widget: "string"}
+          - {label: "Site's Description (used for search engine bots)", name: "description", widget: "string"}
+          - {label: "Site's url (e.g. http://your-site.com/)", name: "url", widget: "string"}
+      
+      - label: "Main Menu Settings"
+        name: "menu_config"
+        file: "src/documents/config/menu.json"
+        fields:
+          - label: "Menu Pages and Order"
+            name: "menu_config_list"
             widget: "list"
             fields:
-              - {label: "Navigation Bar Text", name: "nav_text", widget: "string"} 
-              - {label: "Navigation Bar Page", name: "nav_bar_entry", widget: "relation", collection: "pages", searchFields: ["title"], valueField: "title", displayFields: ["title"]}
-              - label: "Navigation Bar Pages and Order"
-                name: "nav_bar_sub_config_list"
+              - {label: "Menu Text", name: "text", widget: "string"} 
+              - {label: "Menu Link (i.e. relative like /about.html or absolute like http://coolsite.org/cool_things.html)", name: "link", widget: "string"} 
+              - label: "Sub-Menu Pages and Order"
+                name: "sub-menu_config_list"
                 widget: "list"
                 fields:
-                  - {label: "Navigation Bar Text Sub Menu", name: "nav_text", widget: "string"} 
-                  - {label: "Navigation Bar Page Sub Menu", name: "nav_bar_sub_entry", widget: "relation", collection: "pages", searchFields: ["title"], valueField: "title", displayFields: ["title"]}
+                  - {label: "Sub-Menu Text", name: "nav_text", widget: "string"} 
+                  - {label: "Sub-Menu Link (i.e. relative like /about.html or absolute like http://coolsite.org/cool_things.html)", name: "link", widget: "string"}
               
   - name: "pages"
     label: "Pages"
@@ -34,11 +43,10 @@ collections: # A list of collections the CMS should be able to edit
     slug: "{{slug}}"
     fields:
       - {label: "Title", name: "title", widget: "string", tagname: "h1"}
-      - {label: "Navigation bar priority (lower=farther left)", name: "navPriority", widget: "number"}
       - {label: "Body", name: "body", widget: "markdown"}
       #hidden fields are not editable by the user but still show up in the file's front matter
       - {label: "Collection", name: "collection", widget: "hidden", default: "MainPage"}
-      - {label: "Layout", name: "layout", widget: "hidden", default: "default.html"}
+      - {label: "Layout", name: "layout", widget: "hidden", default: "default.pug"}
     meta: #no clue what meta does. Didn't work as I was expecting.
       - {label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD hh:mm:ss"} 
       
