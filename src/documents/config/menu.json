@@ -1,12 +1,12 @@
 {
-  "nav_bar_config_list": [
+  "menu_config_list": [
     {
-      "nav_text": "Doom",
-      "nav_bar_entry": "dooooom"
+      "text": "Doom",
+      "link": "/index.html"
     },
     {
-      "nav_text": "About",
-      "nav_bar_entry": "About Dooom!"
+      "text": "About",
+      "link": "/about.html"
     }
   ]
 }

@@ -1,4 +1,5 @@
 ul(class="nav")
-    each page in collections.MainPage
+    each entry in nav_bar.menu_config_list
         li 
-            a(href=page.path.dhref + page.path.name + ".html") #{page.title}
+            a(href=entry.link) #{entry.text}
+                
