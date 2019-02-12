@@ -2,11 +2,21 @@
   "menu_config_list": [
     {
       "text": "Doom",
-      "link": "/index.html"
+      "link": "/index.html",
+      "sub-menu_config_list": [
+        {
+          "nav_text": "doom+",
+          "link": "/dooooooooom.html"
+        }
+      ]
     },
     {
       "text": "About",
       "link": "/about.html"
+    },
+    {
+      "text": "Another cool place",
+      "link": "/cool_place.html"
     }
   ]
 }
