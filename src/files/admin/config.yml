@@ -17,8 +17,7 @@ collections: # A list of collections the CMS should be able to edit
           - {label: "Site's 'Brand' (e.g. Company Inc.)", name: "brand", widget: "string"}
           - {label: "Site's Title (added to front of page titles)", name: "title", widget: "string"}
           - {label: "Site's Description (used for search engine bots)", name: "description", widget: "string"}
-          - {label: "Site's url (e.g. http://your-site.com/)", name: "url", widget: "string"}
-      
+          - {label: "Site's url (e.g. http://your-site.com/)", name: "url", widget: "string"}      
       - label: "Main Menu Settings"
         name: "menu_config"
         file: "src/documents/config/menu.json"
