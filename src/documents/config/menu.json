@@ -3,9 +3,21 @@
     {
       "text": "Doom",
       "link": "/index.html",
-      "sub-menu_config_list": [
+      "submenu_config_list": [
         {
-          "nav_text": "doom+",
+          "text": "doom+",
+          "link": "/dooooooooom.html"
+        },
+        {
+          "text": "doom+",
+          "link": "/dooooooooom.html"
+        },
+        {
+          "text": "doom+",
+          "link": "/dooooooooom.html"
+        },
+        {
+          "text": "doom+",
           "link": "/dooooooooom.html"
         }
       ]
