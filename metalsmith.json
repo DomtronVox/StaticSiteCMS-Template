@@ -4,7 +4,7 @@
   "metadata": {},
   "plugins": [
     {"metalsmith-metadata": {
-         "nav_bar":"config/nav_bar.json"
+         "nav_bar":"config/menu.json"
         ,"site":"config/site.json"
     }}
    ,{"metalsmith-assets-improved": {"src":"src/files"}}
