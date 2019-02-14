@@ -15,10 +15,13 @@ collections: # A list of collections the CMS should be able to edit
         file: "src/documents/config/site.json"
         fields:
           - {label: "Site's 'Brand' (e.g. Company Inc.)", name: "brand", widget: "string"}
-          - {label: "Site's Title (added to front of page titles)", name: "title", widget: "string"}
+          - {label: "Site's Title (added to page header as large text)", name: "title", widget: "string"}
+          - {label: "Site's Subtitle (added to page headers as small text)", name: "subtitle", widget: "string"}
           - {label: "Site's Description (used for search engine bots)", name: "description", widget: "string"}
-          - {label: "Site's url (e.g. http://your-site.com/)", name: "url", widget: "string"}      
-      - label: "Main Menu Settings"
+          - {label: "Site's URL (e.g. http://your-site.com/)", name: "url", widget: "string"}    
+          - {label: "Site's Favicon (the icon that appears in the browser tabs)", name: "favicon_image", widget: "image"}
+          - {label: "Site's Logo (the image used as the logo)", name: "logo_image", widget: "image"}
+      - label: "Main Menu"
         name: "menu_config"
         file: "src/documents/config/menu.json"
         fields:
@@ -44,7 +47,7 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Title", name: "title", widget: "string", tagname: "h1"}
       - {label: "Body", name: "body", widget: "markdown"}
       #hidden fields are not editable by the user but still show up in the file's front matter
-      - {label: "Collection", name: "collection", widget: "hidden", default: "MainPage"}
+      - {label: "Collection", name: "collection", widget: "hidden", default: "Pages"}
       - {label: "Layout", name: "layout", widget: "hidden", default: "default.pug"}
     meta: #no clue what meta does. Didn't work as I was expecting.
       - {label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD hh:mm:ss"} 
