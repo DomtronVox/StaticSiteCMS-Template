@@ -1,12 +1,16 @@
 doctype html
 html(lang="en")
   head
-    title= title
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, maximum-scale=1")
+    title #{site.title} - #{title}
     include scripts.pug
     include stylesheets.pug
   body
-    include nav_bar.pug
+    include header.pug
+    include menu.pug
     
-    !=contents
+    div(class="content")
+        !=contents
 
     include footer.pug

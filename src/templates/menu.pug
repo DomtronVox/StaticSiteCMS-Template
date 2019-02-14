@@ -1,0 +1,9 @@
+ul(class="nav")
+    each entry in nav_bar.menu_config_list
+        li 
+            a(href=entry.link) #{entry.text}
+            if entry.submenu_config_list
+                ul
+                    each sub_entry in entry.submenu_config_list
+                        li
+                            a(href=sub_entry.link) #{sub_entry.text}
