@@ -1,9 +1,16 @@
-ul(class="nav")
-    each entry in nav_bar.menu_config_list
-        li 
-            a(href=entry.link) #{entry.text}
-            if entry.submenu_config_list
-                ul
-                    each sub_entry in entry.submenu_config_list
-                        li
-                            a(href=sub_entry.link) #{sub_entry.text}
+nav
+    input(type="checkbox" id="mobile_nav_control" hidden)
+    label(id="mobile_nav_icon" for="mobile_nav_control" onclick) 
+    ul(class="nav_container")
+        each entry in nav_bar.menu_config_list
+            li 
+                if entry.submenu_config_list
+                    input(type="checkbox" id=entry.text+"_control" hidden)
+                    label(id=entry.text+"_icon" class="mobile_nav_list_icon" for=entry.text+"_control" onclick)
+                a(href=entry.link) #{entry.text}
+                if entry.submenu_config_list
+                    
+                    ul
+                        each sub_entry in entry.submenu_config_list
+                            li
+                                a(href=sub_entry.link) #{sub_entry.text}

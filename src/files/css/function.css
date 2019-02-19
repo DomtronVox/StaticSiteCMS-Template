@@ -1,23 +1,74 @@
 /*this sheet details the functional aspects that should not change from style to style*/
 
 /*Navigation Menu*/
-
-ul.nav li a {
-    display: block; 
-    text-decoration: none; 
+nav label { /*used for mobile, hidden on desktop*/
+    display: none
 }
 
-ul.nav > li {
-    display: inline-block; 
+ul.nav_container li a {
+    display: block; 
+}
+
+ul.nav_container > li {
+    list-style-type: none;
     position: relative; 
 }
 
-ul.nav > li ul {
+ul.nav_container > li ul {
     display: none; 
-    position: absolute; 
-    left: -10px; 
 }
 
-ul.nav > li:hover ul {display: block;}
+ul.nav_container > li:hover ul {display: block;}
 
-ul.nav > li ul li {display: block;}
+ul.nav_container > li ul li {display: block;}
+
+
+/*mobile specific tweaks*/
+@media screen and (max-width: 44em) {
+    /*prevent horizontal scroll on body so when it is slids sideways you cannot access it*/
+    body {
+        overflow-x: hidden;
+    }
+
+    /*tweak the actuall menu bar list*/
+    .nav_container {
+        position: absolute;
+        left: -30em;
+        width: 20em;
+
+        text-decoration: none; 
+    }
+
+    /**/
+    .nav_container li {
+        width: 100%;
+        display: block !important;
+    }
+
+    #mobile_nav_icon {
+        position: absolute;
+        left: 0;
+
+        z-index: 100;
+        display: block;
+    }
+
+    /*when input is checked nav container slids in from the side*/ 
+    #mobile_nav_control:checked ~ .nav_container {
+        left: 0;
+    }
+
+    /*set hamburger menu icon*/
+    #mobile_nav_icon:after {
+        content: "\2261";
+        position: absolute;
+    }
+
+    .mobile_nav_list_icon {
+        display: block;
+    }
+
+    .mobile_nav_list_icon:after {
+        content: "\2261";
+    }
+}

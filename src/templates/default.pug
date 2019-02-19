@@ -7,10 +7,14 @@ html(lang="en")
     include scripts.pug
     include stylesheets.pug
   body
-    include header.pug
-    include menu.pug
+    header
+        include header.pug
+        include menu.pug
     
-    div(class="content")
-        !=contents
+    div(id="wrapper")
+        div(class="content")
+            !=contents
+
+        include sidebar.pug
 
     include footer.pug

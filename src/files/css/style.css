@@ -3,25 +3,39 @@
 html,body {
     margin:0;
     padding:0;
+
+    height: 100%;
 }
 
 body {
     background: #f5f5f5;
+    display: flex;
+    flex-direction: column;
 }
 
 
 .content {
     margin-left: 10%;
-    margin-right: 10%;
 }
 
-/*Header*/
-.header {
+
+/*###Header###*/
+
+/*front page header*/
+.front_page_header {
     width:100%;
-    height: 300px;
+    min-height: 300px;
     background-image: url("/images/style/dark_wood.png");
 
     line-height: 200px;
+}
+
+.header {
+    width:100%;
+    min-height: 100px;
+    background-image: url("/images/style/dark_wood.png");
+
+    line-height: 100px;
 }
 
 .header_content {
@@ -34,42 +48,46 @@ body {
 }
 
 
-/*Navigation Bar*/
-ul.nav {
+/*###Navigation Bar###*/
+nav {background-color: #303030;}
+ul.nav_container {
     margin: 0;
     padding: 0px;
     background-color: #303030;
-    height: 50px;
     line-height: 40px;
 }
 
-ul.nav li {
-    margin-left: 30px;
+ul.nav_container li {
+    margin-left: 40px;
     font-family: 'Century Schoolbook L';
     font-style: italic;
     font-size: 18px;
 }
 
-ul.nav li a {
+ul.nav_container li a {
     color: #f7ee6d; 
     padding: 5px; 
+    text-decoration: none;
 }
 
-ul.nav > li {
+ul.nav_container > li {
+    display: inline-block;
     padding: 0px;
 }
 
-ul.nav > li:hover {
+ul.nav_container > li:hover {
     color: #c6337a;
-
 }
 
 
-ul.nav li a:hover {
+ul.nav_container li a:hover {
     color: #c6337a; 
 }
 
-ul.nav > li ul {
+ul.nav_container > li ul {
+    position: absolute; 
+    left: -10px;
+
     min-width: 150px; 
     background-color: #303030;
 
@@ -79,18 +97,97 @@ ul.nav > li ul {
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 
-
-/*Footer*/
-
-.footer {
-    margin-top: 50px;
-    background-image: url("/images/style/dark_wood.png");
-    height: 200px;
+/*for the mobile nav menu opener/closer*/
+nav label {
+    font-size: 60px;
+    margin-left: 4px;
 }
 
-.footer > * {
+/*###Sidebar###*/
+#wrapper {
+    position: relative;
+    flex: 1 0 auto;
+}
+
+#sidebar {
+    position: absolute;
+    right: 2px;
+    top: 0px;
+
+    margin-top: 10px;
+}
+
+#sidebar h2 {
+    text-align: center;
+    margin: 5px;
+
+    color: #bcbcbc;
+}
+
+#sidebar > div {
+    border: 2px solid black;
+
+    height: 200px;
+    min-width: 60px; 
+
+    margin-bottom: 10px;
+
+    background-color: #303030;
+}
+
+#sidebar > div a {
+    color: #f7ee6d;
+    text-decoration: none; 
+}
+
+#sidebar > div a:hover {
+    color: #c6337a; 
+}
+
+/*###Footer###*/
+footer {
+    background-image: url("/images/style/dark_wood.png");
+
+    width: 100%;
+    min-height: 100px;
+    
     padding-top: 20px;
+
+    flex-shrink: 0;
+}
+
+footer > * {    
     text-align: center;
     color: #bcbcbc;
 }
 
+/*##Mobile specific styling##*/
+
+@media screen and (max-width: 44em) {
+    /*adds the character for hamburger menus*/
+    
+    /*set the sub menus so they are inline when oppend instead of overlapping*/
+    ul.nav_container > li ul {
+        position: relative;
+        width: 90%;
+    }
+
+
+    /*since our hamburger menu icon is black normally we change is to white so 
+        it doesn't meld with the menu background*/
+    #mobile_nav_control:checked + #mobile_nav_icon:after {
+        color: #bcbcbc;
+    }
+
+    .mobile_nav_list_icon:after {
+        content: "\25b6";
+        font-size: 30px;
+        padding: 6px;
+        float:left;
+        color: #bcbcbc;
+    }
+
+    #sidebar {
+        position: relative;
+    }
+}
