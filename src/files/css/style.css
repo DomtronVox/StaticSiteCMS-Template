@@ -1,36 +1,11 @@
-/*Base Styling sheet. Modify for different looks*/
-
-html,body {
-    margin:0;
-    padding:0;
-
-    height: 100%;
-}
-
 body {
+    margin:0;
     background: #f5f5f5;
-    display: flex;
-    flex-direction: column;
 }
-
-
-.content {
-    margin-left: 10%;
-}
-
 
 /*###Header###*/
 
-/*front page header*/
-.front_page_header {
-    width:100%;
-    min-height: 300px;
-    background-image: url("/images/style/dark_wood.png");
-
-    line-height: 200px;
-}
-
-.header {
+#masthead {
     width:100%;
     min-height: 100px;
     background-image: url("/images/style/dark_wood.png");
@@ -38,96 +13,92 @@ body {
     line-height: 100px;
 }
 
-.header_content {
+#masthead_content {
     text-align: center;
 }
 
-.header_content > * {
+#masthead_content * {
     margin: 0px;
     color: #bcbcbc;
 }
 
 
 /*###Navigation Bar###*/
-nav {background-color: #303030;}
-ul.nav_container {
+nav {
+    background-color: #303030;
+}
+
+#nav_container {
     margin: 0;
     padding: 0px;
     background-color: #303030;
     line-height: 40px;
 }
 
-ul.nav_container li {
-    margin-left: 40px;
+#nav_container li {
     font-family: 'Century Schoolbook L';
     font-style: italic;
     font-size: 18px;
 }
 
-ul.nav_container li a {
+#nav_container > li {
+    margin-left: 40px;
+}
+
+
+
+#nav_container a {
     color: #f7ee6d; 
     padding: 5px; 
     text-decoration: none;
 }
 
-ul.nav_container > li {
-    display: inline-block;
-    padding: 0px;
-}
-
-ul.nav_container > li:hover {
-    color: #c6337a;
-}
-
-
-ul.nav_container li a:hover {
+#nav_container a:hover {
     color: #c6337a; 
 }
 
-ul.nav_container > li ul {
-    position: absolute; 
-    left: -10px;
-
-    min-width: 150px; 
+#nav_container ul {
     background-color: #303030;
-
     padding: 0px;
-    margin: 0;
+
+    text-align: center;
+    min-width: 100px;
 
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 
-/*for the mobile nav menu opener/closer*/
-nav label {
+  /*for the mobile nav menu opener/closer*/
+/*nav label {
     font-size: 60px;
     margin-left: 4px;
+}*/
+
+
+/*###Main Content###*/
+
+#wrapper {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+main {
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 /*###Sidebar###*/
-#wrapper {
-    position: relative;
-    flex: 1 0 auto;
-}
 
-#sidebar {
-    position: absolute;
-    right: 2px;
-    top: 0px;
-
-    margin-top: 10px;
-}
-
-#sidebar h2 {
+aside h2 {
     text-align: center;
     margin: 5px;
 
     color: #bcbcbc;
 }
 
-#sidebar > div {
+aside > section {
     border: 2px solid black;
 
-    height: 200px;
+    min-height: 100px;
     min-width: 60px; 
 
     margin-bottom: 10px;
@@ -135,13 +106,11 @@ nav label {
     background-color: #303030;
 }
 
-#sidebar > div a {
+aside > section a {
     color: #f7ee6d;
-    text-decoration: none; 
-}
+    text-decoration: none;
 
-#sidebar > div a:hover {
-    color: #c6337a; 
+    padding-left: 10px;
 }
 
 /*###Footer###*/
@@ -152,8 +121,6 @@ footer {
     min-height: 100px;
     
     padding-top: 20px;
-
-    flex-shrink: 0;
 }
 
 footer > * {    
@@ -162,32 +129,40 @@ footer > * {
 }
 
 /*##Mobile specific styling##*/
-
 @media screen and (max-width: 44em) {
-    /*adds the character for hamburger menus*/
-    
     /*set the sub menus so they are inline when oppend instead of overlapping*/
-    ul.nav_container > li ul {
+    nav.nav_top #nav_container > li ul {
         position: relative;
-        width: 90%;
     }
 
+    #mobile_nav_icon:after {
+        font-size: 50px;
+        left: 10;
+    }
 
-    /*since our hamburger menu icon is black normally we change is to white so 
+    /*since our hamburger menu icon is black normally, we change it to white so 
         it doesn't meld with the menu background*/
     #mobile_nav_control:checked + #mobile_nav_icon:after {
         color: #bcbcbc;
     }
 
+    /*setup the sub menu icons to be side arrows*/
     .mobile_nav_list_icon:after {
         content: "\25b6";
-        font-size: 30px;
+        font-size: 20px;
         padding: 6px;
         float:left;
         color: #bcbcbc;
     }
 
-    #sidebar {
-        position: relative;
+    /*set wrapper to be column*/
+    #wrapper {
+        flex-direction: column;
+    }
+
+    /*Center the aside a bit more*/
+    aside {
+        margin-left: 5%;
+        margin-right: 5%;
     }
 }

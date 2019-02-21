@@ -6,15 +6,32 @@ html(lang="en")
     title #{site.title} - #{title}
     include scripts.pug
     include stylesheets.pug
-  body
-    header
-        include header.pug
-        include menu.pug
-    
-    div(id="wrapper")
-        div(class="content")
-            !=contents
 
-        include sidebar.pug
+  body
+    include header.pug
+
+    if positioning.nav_position == "top"
+        include nav.pug   
+ 
+    div(id="wrapper")
+
+        div(id="left_space")
+            if positioning.nav_position == "left"
+                include nav.pug
+
+            if positioning.aside_position == "left"
+                include sidebar.pug
+
+
+        div(id="center_space")
+            main
+                !=contents
+
+        div(id="right_space")
+            if positioning.nav_position == "right"
+                include nav.pug
+            
+            if positioning.aside_position == "right"
+                include sidebar.pug
 
     include footer.pug

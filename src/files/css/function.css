@@ -1,48 +1,97 @@
 /*this sheet details the functional aspects that should not change from style to style*/
-
-/*Navigation Menu*/
-nav label { /*used for mobile, hidden on desktop*/
-    display: none
+body {
+    display: flex;
+    flex-direction: column;/*3 parts, header top, footer bottom, page unique in the center*/
+    min-height: 100vh;
 }
 
-ul.nav_container li a {
-    display: block; 
+/*##wrapper###*/
+/*  everything between the header and footer falls inside the wrapper*/
+#wrapper {
+    /*makes the center of the webpage fill the page so the footer is at the bottom 
+        when content is sparse*/
+    flex: 1;
+
+    display: flex; /*to allow side-by-side positioning of sub elements like sidebar*/
+    /*defaults to row*/
 }
 
-ul.nav_container > li {
+
+#center_space {
+    flex: 1;
+}
+
+/*##Navigation Menu##*/
+#nav_container {
+    position: relative;
+}
+
+#nav_container li {
     list-style-type: none;
-    position: relative; 
 }
 
-ul.nav_container > li ul {
+#nav_container > li ul {
     display: none; 
 }
 
-ul.nav_container > li:hover ul {display: block;}
+#nav_container > li:hover ul {display: block;}
 
-ul.nav_container > li ul li {display: block;}
+
+/* nav positioning */
+
+/*>nav along top under header*/
+nav.nav_top #nav_container > li{
+    display: inline-block; /*top header should be in a line along the width*/
+}
+
+  /*children lists drop down from the main nav items*/
+nav.nav_top #nav_container > li ul{
+    position: absolute; 
+}
+
+/*>nav inside and to the right of header*/
+nav.nav_in_header {
+
+}
+
+/*>nav along left side*/
+nav.nav_left {
+
+}
+
+nav.nav_right {
+
+}
+
+
+/*##sidebar##*/
+
+/*Taken care of by templating conditionals and flexbox*/
+
+/*##Footer##*/
+
+
 
 
 /*mobile specific tweaks*/
 @media screen and (max-width: 44em) {
-    /*prevent horizontal scroll on body so when it is slids sideways you cannot access it*/
-    body {
-        overflow-x: hidden;
-    }
-
-    /*tweak the actuall menu bar list*/
-    .nav_container {
+    /*tweak the actual menu bar list*/
+    #nav_container {
         position: absolute;
-        left: -30em;
+        left: 0em;
         width: 20em;
 
+        display: none;
+
         text-decoration: none; 
+
+        background-color: white;
     }
 
     /**/
-    .nav_container li {
+    #nav_container li {
         width: 100%;
-        display: block !important;
+        display: block !important; /*switches from inline horizontal menu if that is applied.*/
     }
 
     #mobile_nav_icon {
@@ -53,9 +102,9 @@ ul.nav_container > li ul li {display: block;}
         display: block;
     }
 
-    /*when input is checked nav container slids in from the side*/ 
-    #mobile_nav_control:checked ~ .nav_container {
-        left: 0;
+    /*when input is checked nav container slides in from the side*/ 
+    #mobile_nav_control:checked ~ #nav_container {
+        display: block;
     }
 
     /*set hamburger menu icon*/
