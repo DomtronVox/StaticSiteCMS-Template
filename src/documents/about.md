@@ -1,6 +1,6 @@
 ---
-title: About Dooom!
-layout: default.pug
+title: About Page
 collection: MainPage
+layout: default.pug
 ---
-This here is some content about us and dooom!
+This here is some content about us and the test site!
