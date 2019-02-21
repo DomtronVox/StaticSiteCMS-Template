@@ -6,6 +6,7 @@
     {"metalsmith-metadata": {
          "nav_bar":"config/menu.json"
         ,"site":"config/site.json"
+        ,"positioning":"config/positioning.json"
     }}
    ,{"metalsmith-assets-improved": {"src":"src/files"}}
    ,{"metalsmith-collections": {}}

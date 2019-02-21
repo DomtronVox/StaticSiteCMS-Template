@@ -21,6 +21,12 @@ collections: # A list of collections the CMS should be able to edit
           - {label: "Site's URL (e.g. http://your-site.com/)", name: "url", widget: "string"}    
           - {label: "Site's Favicon (the icon that appears in the browser tabs)", name: "favicon_image", widget: "image"}
           - {label: "Site's Logo (the image used as the logo)", name: "logo_image", widget: "image"}
+      - label: "Layout Settings"
+        name: "layout_config"
+        file: "src/documents/config/positioning.json"
+        fields:
+          - {label: "Menu Bar Location", name: "nav_position", widget: "select", default: "top", options: ["top", "in_header", "left", "right"] }
+          - {label: "Sidebar Location", name: "aside_position", widget: "select", default: "right", options: ["right", "left", "off"] }
       - label: "Main Menu"
         name: "menu_config"
         file: "src/documents/config/menu.json"
