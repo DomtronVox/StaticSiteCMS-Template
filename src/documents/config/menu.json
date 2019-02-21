@@ -1,24 +1,24 @@
 {
   "menu_config_list": [
     {
-      "text": "Doom",
+      "text": "Home",
       "link": "/index.html",
       "submenu_config_list": [
         {
-          "text": "doom+",
-          "link": "/dooooooooom.html"
+          "text": "test1",
+          "link": "/test1.html"
         },
         {
-          "text": "doom+",
-          "link": "/dooooooooom.html"
+          "text": "test2",
+          "link": "/test2.html"
         },
         {
-          "text": "doom+",
-          "link": "/dooooooooom.html"
+          "text": "test3",
+          "link": "/test3.html"
         },
         {
-          "text": "doom+",
-          "link": "/dooooooooom.html"
+          "text": "test4",
+          "link": "/test4.html"
         }
       ]
     },
