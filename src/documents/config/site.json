@@ -1,6 +1,9 @@
 {
   "brand": "Site Brand Name",
   "title": "Site Title",
+  "subtitle": "Subtitle Text",
   "description": "Site Description blurb",
-  "url": "http://siteurl.com/"
+  "url": "http://siteurl.com/",
+  "favicon_image": "/images/mission-icon.svg",
+  "logo_image": "/images/mission-icon.svg"
 }
