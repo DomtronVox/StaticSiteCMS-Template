@@ -5,10 +5,10 @@ nav(class="nav_"+positioning.nav_position)
     label(id="mobile_nav_icon" for="mobile_nav_control" onclick) 
 
     ul(id="nav_container")
-        //add each main nav item
+        //-add each main nav item
         each entry in nav_bar.menu_config_list
             li 
-                //if there are sub menu items this item needs a toggable dropdown for mobile
+                //- if there are sub menu items this item needs a toggable dropdown for mobile
                 if entry.submenu_config_list
                     input(type="checkbox" id=entry.text+"_control" hidden)
                     label(id=entry.text+"_icon" class="mobile_nav_list_icon" for=entry.text+"_control" onclick)
