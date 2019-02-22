@@ -9,7 +9,9 @@
         ,"positioning":"config/positioning.json"
     }}
    ,{"metalsmith-assets-improved": {"src":"src/files"}}
-   ,{"metalsmith-collections": {}}
+   ,{"metalsmith-collections": {
+        "recent_posts": {"pattern": "posts/*.md", "sortBy":"date", "limit": 10}
+    }}
    ,{"metalsmith-pagination":{}}
    ,{"metalsmith-paths": true }
    ,{"./lib/debug.js":true}

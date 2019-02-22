@@ -87,6 +87,9 @@ main {
 }
 
 /*###Sidebar###*/
+aside {
+    padding: 4px;
+}
 
 aside h2 {
     text-align: center;

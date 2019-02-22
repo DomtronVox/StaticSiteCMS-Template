@@ -1,7 +1,9 @@
 aside(class="aside_"+positioning.aside_position)
     section(id="blog_recent")
         h2 Recent Blog Posts
-        a(href="#") test
+        each post in recent_posts
+            p
+                a(href=post.path.dhref + post.path.name + ".html") #{post.title}
     section(id="links")
         h2 Interesting Links
     

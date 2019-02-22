@@ -68,5 +68,5 @@ collections: # A list of collections the CMS should be able to edit
       #hidden fields are not editable by the user but still show up in the file's front matter
       - {label: "Collection", name: "collection", widget: "hidden", default: "posts"}
       - {label: "Layout", name: "layout", widget: "hidden", default: "default.pug"}
-      - {label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD hh:mm:ss"} 
+      - {label: "Publish Date (note no a scheduler, is just the date people see)", name: "date", widget: "datetime", format: "YYYY-MM-DD hh:mm:ss"} 
 
