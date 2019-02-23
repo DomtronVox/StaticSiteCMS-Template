@@ -1,6 +1,6 @@
 ---
 title: Example Page
 collection: Pages
-layout: default.pug
+layout: page.pug
 ---
 this is a third example page.

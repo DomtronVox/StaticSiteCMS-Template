@@ -1,0 +1,11 @@
+extends base.pug
+
+block content
+    article
+        header
+            h2 #{title}
+            p Pulish Date:
+                span(class="date")  #{date}
+
+        article
+            !=contents
