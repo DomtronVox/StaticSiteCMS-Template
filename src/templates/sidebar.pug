@@ -1,9 +1,15 @@
 aside(class="aside_"+positioning.aside_position)
-    section(id="blog_recent")
-        h2 Recent Blog Posts
-        each post in recent_posts
-            p
-                a(href=post.path.dhref + post.path.name + ".html") #{post.title}
-    section(id="links")
-        h2 Interesting Links
-    
+    if recent_posts
+        section(id="recent_posts")
+            h2 Recent #{site.posts_name} Posts
+            each post in recent_posts
+                p
+                    a(href=post.path.dhref + post.path.name + ".html") #{post.title}
+    if site.sidebar_links_list[0]
+        section(id="links")
+            h2 #{site.sidebar_links_name}
+            each link in site.sidebar_links_list
+                p
+                    a(href=link.link) #{link.text}
+        
+        
