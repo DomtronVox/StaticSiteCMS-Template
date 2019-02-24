@@ -71,6 +71,15 @@ nav.nav_right {
 /*##Footer##*/
 
 
+/*##Post Specific##*/
+
+#post_nav {
+    display: flex;
+}
+
+#post_nav span {
+    flex:1;
+}
 
 
 /*mobile specific tweaks*/

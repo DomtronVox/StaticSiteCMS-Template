@@ -7,5 +7,11 @@ block content
             p Pulish Date:
                 span(class="date")  #{date}
 
-        article
-            !=contents
+        !=contents
+
+        div(id="post_nav")
+          if previous
+              a(href=previous.path.dhref + previous.path.name + ".html") < Older Posts
+          span
+          if next
+              a(href=next.path.dhref + next.path.name + ".html") Newer Posts >
