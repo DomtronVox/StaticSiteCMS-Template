@@ -10,9 +10,20 @@
     }}
    ,{"metalsmith-assets-improved": {"src":"src/files"}}
    ,{"metalsmith-collections": {
-        "recent_posts": {"pattern": "posts/*.md", "sortBy":"date", "limit": 10}
+        "recent_posts": {"pattern": "posts/*.md", "sortBy":"date", "limit": 10},
+        "posts": {}
     }}
-   ,{"metalsmith-pagination":{}}
+   ,{"metalsmith-pagination": {
+      "collections.posts": {
+        "perPage": 20,
+        "layout": "post_pagination_index.pug",
+        "first": "posts/index.html",
+        "path": "posts/:num/index.html",
+        "pageMetadata": {
+          "title": "Archive"
+        }
+      }
+    }}
    ,{"metalsmith-paths": true }
    ,{"./lib/debug.js":true}
    ,{"metalsmith-in-place": true}

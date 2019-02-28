@@ -1,0 +1,19 @@
+extends base.pug
+
+block content
+    !=contents
+
+    each post in pagination.files
+        
+       h1 
+           a(href=post.path.dhref + post.path.name + ".html") #{post.title}
+
+       if tag_list[0]
+           p Tags: 
+               each tag in tag_list
+                   #{tag},
+
+       p #{summery_text}
+
+       span 
+           a(href=post.path.dhref + post.path.name + ".html") Read More
