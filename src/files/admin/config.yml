@@ -74,8 +74,8 @@ collections: # A list of collections the CMS should be able to edit
     slug: "{{slug}}"
     fields:
       - {label: "Title", name: "title", widget: "string", tagname: "h1"}
-      - {label: "Summery of Post (Used in post list page)", name: "summery_text", widget: "text"}
-      - {label: "Include Summery in Post Body", name: "put_summery_in_body", widget: "boolean"}
+      - {label: "Summery of Post", name: "summery_text", widget: "text", hint: "Give an idea of the post's content when in a list of posts."}
+      - {label: "Include Summery in Post Body", name: "put_summery_in_body", widget: "boolean", required:false}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Publish Date (note not a scheduler, is just the date people see)", name: "date", widget: "datetime", format: "YYYY-MM-DD hh:mm:ss"} 
       - label: "Tags"
