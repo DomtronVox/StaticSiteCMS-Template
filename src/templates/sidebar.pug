@@ -1,5 +1,5 @@
 aside(class="aside_"+positioning.aside_position)
-    if recent_posts
+    if recent_posts[0]
         section(id="recent_posts")
             h2 Recent #{site.posts_name} Posts
             each post in recent_posts
