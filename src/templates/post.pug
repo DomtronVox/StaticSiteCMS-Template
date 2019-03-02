@@ -7,6 +7,9 @@ block content
             p Pulish Date:
                 span(class="date")  #{date}
 
+        if put_summery_in_body
+            p #{summery_text}
+
         !=contents
 
         div(id="post_nav")
