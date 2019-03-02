@@ -60,10 +60,12 @@ collections: # A list of collections the CMS should be able to edit
     fields:
       - {label: "Title", name: "title", widget: "string", tagname: "h1"}
       - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD hh:mm:ss"} 
+
       #hidden fields are not editable by the user but still show up in the file's front matter
       - {label: "Collection", name: "collection", widget: "hidden", default: "Pages"}
       - {label: "Layout", name: "layout", widget: "hidden", default: "default.pug"}
-      - {label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD hh:mm:ss"} 
+
       
   - name: "posts"
     label: "Blog/News Posts"
@@ -72,9 +74,16 @@ collections: # A list of collections the CMS should be able to edit
     slug: "{{slug}}"
     fields:
       - {label: "Title", name: "title", widget: "string", tagname: "h1"}
+      - {label: "Summery of Post (Used in post list page)", name: "summery_text", widget: "text"}
+      - {label: "Include Summery in Post Body", name: "put_summery_in_body", widget: "boolean"}
       - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Publish Date (note not a scheduler, is just the date people see)", name: "date", widget: "datetime", format: "YYYY-MM-DD hh:mm:ss"} 
+      - label: "Tags"
+        name: "tags_list"
+        widget: "list"
+        field: {label: "Tag", name: "tag", widget: "string"}
+
       #hidden fields are not editable by the user but still show up in the file's front matter
       - {label: "Collection", name: "collection", widget: "hidden", default: "posts"}
-      - {label: "Layout", name: "layout", widget: "hidden", default: "default.pug"}
-      - {label: "Publish Date (note no a scheduler, is just the date people see)", name: "date", widget: "datetime", format: "YYYY-MM-DD hh:mm:ss"} 
+      - {label: "Layout", name: "layout", widget: "hidden", default: "post.pug"}
 
