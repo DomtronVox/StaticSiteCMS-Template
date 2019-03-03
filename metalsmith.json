@@ -11,7 +11,7 @@
    ,{"metalsmith-assets-improved": {"src":"src/files"}}
    ,{"metalsmith-collections": {
         "recent_posts": {"pattern": "posts/*.md", "sortBy":"date", "limit": 10, "reverse": true, "refer": false},
-        "posts": {"sortBy":"date"}
+        "posts": {"sortBy":"date", "reverse": true}
     }}
    ,{"metalsmith-pagination": {
       "collections.posts": {
