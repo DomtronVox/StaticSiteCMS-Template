@@ -15,17 +15,18 @@ collections: # A list of collections the CMS should be able to edit
         file: "src/documents/config/site.json"
         fields:
           - {label: "'Brand' (e.g. Company Inc.)", name: "brand", widget: "string"}
-          - {label: "Title (added to page header as large text)", name: "title", widget: "string"}
-          - {label: "Subtitle (added to page headers as small text)", name: "subtitle", widget: "string"}
-          - {label: "Site Description (used for search engine bots)", name: "description", widget: "string"}
+          - {label: "Title", name: "title", widget: "string", hint: "Is added to page header as large text."}
+          - {label: "Subtitle", name: "subtitle", widget: "string", hint: "Is added to page headers as small text."}
+          - {label: "Site Description", name: "description", widget: "string", hint: "Is used for search engine bots."}
           - {label: "URL (e.g. http://your-site.com/)", name: "url", widget: "string"}    
-          - {label: "Favicon (the icon that appears in the browser tabs)", name: "favicon_image", widget: "image"}
-          - {label: "Logo (the image used as the logo)", name: "logo_image", widget: "image"}
+          - {label: "Favicon", name: "favicon_image", widget: "image", hint: "The icon that appears in the browser tabs."}
+          - {label: "Logo", name: "logo_image", widget: "image", hint: "The image used as the logo."}
           - {label: "Name of Site Posts (Examples: 'Blog' or 'News')", name: "posts_name", widget: "string"}
           - {label: "Name of Extra Links sidebar (Examples: 'Our Friends' or 'Interesting Links')", name: "sidebar_links_name", widget: "string"}
-          - label: "Sidebar Extra Links (leave empty to remove the extra sidebar)"
+          - label: "Sidebar Extra Links"
             name: "sidebar_links_list"
             widget: "list"
+            hint: "Leave empty to remove the extra sidebar."
             fields:
                   - {label: "Link Text", name: "text", widget: "string"} 
                   - {label: "Link URL (i.e. relative like /about.html or absolute like http://coolsite.org/cool_things.html)", name: "link", widget: "string"} 
@@ -68,7 +69,7 @@ collections: # A list of collections the CMS should be able to edit
 
       
   - name: "posts"
-    label: "Blog/News Posts"
+    label: "Posts"
     folder: "src/documents/posts"
     create: true
     slug: "{{slug}}"
