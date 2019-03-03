@@ -79,7 +79,7 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Publish Date (note not a scheduler, is just the date people see)", name: "date", widget: "datetime", format: "YYYY-MM-DD hh:mm:ss"} 
       - label: "Tags"
-        name: "tags_list"
+        name: "tag_list"
         widget: "list"
         field: {label: "Tag", name: "tag", widget: "string"}
 

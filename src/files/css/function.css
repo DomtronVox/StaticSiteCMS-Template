@@ -81,6 +81,18 @@ nav.nav_right {
     flex:1;
 }
 
+span.post_tag {
+    padding-left: 4px;
+}
+
+span.post_tag:after {
+    content: ",";
+}
+
+span.post_tag:last-child:after {
+    content: "";
+}
+
 
 /*mobile specific tweaks*/
 @media screen and (max-width: 44em) {

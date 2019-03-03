@@ -8,12 +8,12 @@ block content
        h1 
            a(href=post.path.dhref + post.path.name + ".html") #{post.title}
 
-       if tag_list[0]
+       if post.tag_list[0]
            p Tags: 
-               each tag in tag_list
-                   #{tag},
+               each tag in post.tag_list
+                   span(class="post_tag") #{tag} 
 
-       p #{summery_text}
+       p Summery: #{post.summery_text}
 
        span 
            a(href=post.path.dhref + post.path.name + ".html") Read More

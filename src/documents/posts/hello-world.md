@@ -3,7 +3,7 @@ title: Hello World!
 summery_text: The first post
 put_summery_in_body: true
 date: '2019-03-02 06:08:52'
-tags_list:
+tag_list:
   - Foo
   - Worlds
 collection: posts
