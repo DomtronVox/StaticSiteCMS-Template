@@ -23,6 +23,17 @@
           "title": "Archive"
         }
       }
+    }},
+    {"metalsmith-tags": {
+      "handle": "tag_list",
+      "path": "tags/:tag.html",
+      "layout": "tag_index.pug",
+      "sortBy": "date",
+      "reverse": true,
+      "skipMetadata": false,
+      "slug": {
+        "mode": "rfc3986"
+      }
     }}
    ,{"metalsmith-paths": true }
    ,{"./lib/debug.js":true}

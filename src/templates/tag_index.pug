@@ -1,0 +1,16 @@
+extends base.pug
+
+block content
+    !=contents
+
+    each post in pagination.files
+        
+       h1 
+           a(href=post.path.dhref + post.path.name + ".html") #{post.title}
+
+       include partials/tag_list.pug
+
+       p Summery: #{post.summery_text}
+
+       span 
+           a(href=post.path.dhref + post.path.name + ".html") Read More
