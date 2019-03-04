@@ -1,17 +1,16 @@
-extends base/base.pug
+extends base.pug
 
 block content
     !=contents
+
+    p Below is a listing of all pages with the tag #{tag} from newest to oldest.
 
     each post in pagination.files
         
        h1 
            a(href=post.path.dhref + post.path.name + ".html") #{post.title}
 
-       if post.tag_list[0]
-           p Tags: 
-               each tag in post.tag_list
-                   span(class="post_tag") #{tag} 
+       include partials/tag_list.pug
 
        p Summery: #{post.summery_text}
 

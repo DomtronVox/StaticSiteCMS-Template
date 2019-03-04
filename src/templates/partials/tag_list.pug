@@ -1,0 +1,6 @@
+
+if post.tag_list[0]
+    p Tags: 
+        each tag in post.tag_list
+            span(class="post_tag") 
+                a(href="/tags/"+tag.name+".html") #{tag.name.toUpperCase()}
