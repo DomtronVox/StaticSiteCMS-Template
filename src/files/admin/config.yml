@@ -82,7 +82,7 @@ collections: # A list of collections the CMS should be able to edit
       - label: "Tags"
         name: "tag_list"
         widget: "list"
-        field: {label: "Tag", name: "tag", widget: "string", pattern: ["^[a-z0-9_\-]+$", "Tags must be all lower case."]}
+        field: {label: "Tag", name: "tag", widget: "string", pattern: ["^[a-z0-9 &*^%$#@!.]+$", "Tags must be all lower case."]}
 
       #hidden fields are not editable by the user but still show up in the file's front matter
       - {label: "Collection", name: "collection", widget: "hidden", default: "posts"}
