@@ -8,6 +8,9 @@ block content
        h1 
            a(href=post.path.dhref + post.path.name + ".html") #{post.title}
 
+       p Pulish Date:
+                span(class="date")  #{post.date}
+
        //- must pull this variable out of individual posts so the tag_list partial can use it
        - var tag_list = post.tag_list
        include partials/tag_list.pug
