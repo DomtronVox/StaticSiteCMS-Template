@@ -5,7 +5,7 @@ put_summery_in_body: true
 date: '2019-03-02 06:08:52'
 tag_list:
   - Foo
-  - Worlds
+  - World
 collection: posts
 layout: post.pug
 ---
