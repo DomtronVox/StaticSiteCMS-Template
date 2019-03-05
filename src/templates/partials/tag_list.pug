@@ -1,6 +1,15 @@
+//-make sure to define tag_list before including this partial
 
-if post.tag_list[0]
-    p Tags: 
-        each tag in post.tag_list
-            span(class="post_tag") 
-                a(href="/tags/"+tag.name+".html") #{tag.name.toUpperCase()}
+p Tags:
+    if tag_list
+        if tag_list[0]
+            each tag in tag_list
+                span(class="post_tag") 
+                    //- A bit of a hack but the line of JS forces 1st letter of each word to be caps with everything else lower case.
+                    a(href="/tags/"+tag.slug+".html") #{tag.name.toLowerCase().replace(/(^| )(\w)/g, function(x) { return x.toUpperCase() })}
+
+    //- if either test fails we say there are 'None' tags.
+        else
+            span None
+    else
+        span None

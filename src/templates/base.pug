@@ -4,23 +4,23 @@ html(lang="en")
     meta(charset="utf-8")
     meta(name="viewport" content="width=device-width, maximum-scale=1")
     title #{site.title} - #{title}
-    include scripts.pug
-    include stylesheets.pug
+    include partials/scripts.pug
+    include partials/stylesheets.pug
 
   body
-    include header.pug
+    include partials/header.pug
 
     if positioning.nav_position == "top"
-        include nav.pug   
+        include partials/nav.pug   
  
     div(id="wrapper")
 
         div(id="left_space")
             if positioning.nav_position == "left"
-                include nav.pug
+                include partials/nav.pug
 
             if positioning.aside_position == "left"
-                include sidebar.pug
+                include partials/sidebar.pug
 
 
         div(id="center_space")
@@ -29,9 +29,9 @@ html(lang="en")
 
         div(id="right_space")
             if positioning.nav_position == "right"
-                include nav.pug
+                include partials/nav.pug
             
             if positioning.aside_position == "right"
-                include sidebar.pug
+                include partials/sidebar.pug
 
-    include footer.pug
+    include partials/footer.pug

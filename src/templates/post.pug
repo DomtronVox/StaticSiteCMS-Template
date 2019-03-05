@@ -6,6 +6,7 @@ block content
             h2 #{title}
             p Pulish Date:
                 span(class="date")  #{date}
+            include partials/tag_list.pug
 
         if put_summery_in_body
             p #{summery_text}
