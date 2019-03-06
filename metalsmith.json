@@ -23,8 +23,9 @@
           "title": "Archive"
         }
       }
-    }},
-    {"metalsmith-tags": {
+    }}
+   ,{"metalsmith-paths": true }
+   ,{"metalsmith-tags": {
       "handle": "tag_list",
       "path": "tags/:tag.html",
       "layout": "tag_index.pug",
@@ -35,7 +36,6 @@
         "mode": "rfc3986"
       }
     }}
-   ,{"metalsmith-paths": true }
    ,{"./lib/debug.js":true}
    ,{"metalsmith-in-place": true}
    ,{"metalsmith-layouts": {"directory":"src/templates"}}
