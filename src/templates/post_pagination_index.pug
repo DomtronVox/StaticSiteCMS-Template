@@ -1,35 +1,37 @@
 extends base.pug
 
 mixin pagination_nav
-    br
-    span(id="pagination_nav")
+    //- only add the nav if there are more then 1 pagination pages
+    if pagination.getPages(13).length > 1
+        br
+        span(id="pagination_nav")
 
-        //- add a go back one link if there are previous pages
-        if pagination.previous
-            span(class="pag_nav_link") 
-                a(href=pagination.previous.path.href) < previous
-        else
-            span(class="pag_nav_link") < previous
-
-        //- add quick jump links to nearby pagination pages
-        each page in pagination.getPages(13)
-            //- no link for the current page just the number
-            if page.pagination.num == pagination.num
-                span(class="pag_nav_link") #{pagination.num}
-
-            //- narrow it down so we only show 6 up or 6 below the current pagenumber
-            else 
+            //- add a go back one link if there are previous pages
+            if pagination.previous
                 span(class="pag_nav_link") 
-                    a(href=page.path.href)
-                        #{page.pagination.name}
+                    a(href=pagination.previous.path.href) < previous
+            else
+                span(class="pag_nav_link") < previous
 
-        //- add a go forward one link if next exists
-        if pagination.next
-            span(class="pag_nav_link") 
-                a(href=pagination.next.path.href) next >
-        else
-            span(class="pag_nav_link") next >
-    br
+            //- add quick jump links to nearby pagination pages
+            each page in pagination.getPages(13)
+                //- no link for the current page just the number
+                if page.pagination.num == pagination.num
+                    span(class="pag_nav_link") #{pagination.num}
+
+                //- narrow it down so we only show 6 up or 6 below the current pagenumber
+                else 
+                    span(class="pag_nav_link") 
+                        a(href=page.path.href)
+                            #{page.pagination.name}
+
+            //- add a go forward one link if next exists
+            if pagination.next
+                span(class="pag_nav_link") 
+                    a(href=pagination.next.path.href) next >
+            else
+                span(class="pag_nav_link") next >
+        br
 
 
 block content
