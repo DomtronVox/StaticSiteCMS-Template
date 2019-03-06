@@ -1,21 +1,60 @@
 extends base.pug
 
+mixin pagination_nav
+    br
+    span(id="pagination_nav")
+
+        //- add a go back one link if there are previous pages
+        if pagination.previous
+            span(class="pag_nav_link") 
+                a(href=pagination.previous.path.href) < previous
+        else
+            span(class="pag_nav_link") < previous
+
+        //- add quick jump links to nearby pagination pages
+        each page in pagination.getPages(13)
+            //- no link for the current page just the number
+            if page.pagination.num == pagination.num
+                span(class="pag_nav_link") #{pagination.num}
+
+            //- narrow it down so we only show 6 up or 6 below the current pagenumber
+            else 
+                span(class="pag_nav_link") 
+                    a(href=page.path.href)
+                        #{page.pagination.name}
+
+        //- add a go forward one link if next exists
+        if pagination.next
+            span(class="pag_nav_link") 
+                a(href=pagination.next.path.href) next >
+        else
+            span(class="pag_nav_link") next >
+    br
+
+
 block content
     !=contents
+ 
+    +pagination_nav
 
     each post in pagination.files
-        
-       h1 
-           a(href=post.path.dhref + post.path.name + ".html") #{post.title}
+       article(class="post_preview") 
+           h1 
+               a(href=post.path.dhref + post.path.name + ".html") #{post.title}
 
-       p Pulish Date:
+           p Pulish Date:
                 span(class="date")  #{post.date}
 
-       //- must pull this variable out of individual posts so the tag_list partial can use it
-       - var tag_list = post.tag_list
-       include partials/tag_list.pug
+           //- must pull this variable out of individual posts so the tag_list partial can use it
+           - var tag_list = post.tag_list
+           include partials/tag_list.pug
 
-       p Summery: #{post.summery_text}
+           p Summery: #{post.summery_text}
 
-       span 
-           a(href=post.path.dhref + post.path.name + ".html") Read More
+           span 
+               a(href=post.path.dhref + post.path.name + ".html") Read More
+
+    //- add in the pagination navigation
+    +pagination_nav
+
+
