@@ -6,6 +6,10 @@ date: '2019-03-02 06:08:52'
 tag_list:
   - foo
   - world
+  - bob
+  - job
+  - so much!
+  - oh no
 collection: posts
 layout: post.pug
 ---

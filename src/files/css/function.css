@@ -66,7 +66,9 @@ nav.nav_right {
 
 /*##sidebar##*/
 
-/*Taken care of by templating conditionals and flexbox*/
+#right_space, #left_space {
+    max-width: 25%;
+}
 
 /*##Footer##*/
 
@@ -81,8 +83,13 @@ nav.nav_right {
     flex:1;
 }
 
+span.info_header {
+    float: left;
+}
+
 span.post_tag {
     padding-left: 4px;
+    float: left;
 }
 
 span.post_tag:after {
@@ -96,6 +103,10 @@ span.post_tag:last-child:after {
 
 /*mobile specific tweaks*/
 @media screen and (max-width: 44em) {
+    #right_space, #left_space {
+        max-width: 100%;
+    }
+
     /*tweak the actual menu bar list*/
     #nav_container {
         position: absolute;

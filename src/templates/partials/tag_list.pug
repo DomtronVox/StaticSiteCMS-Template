@@ -1,6 +1,7 @@
 //-make sure to define tag_list before including this partial
 
-p Tags:
+p 
+    span(class="info_header") Tags:
     if tag_list
         if tag_list[0]
             each tag in tag_list
@@ -13,3 +14,4 @@ p Tags:
             span None
     else
         span None
+br
