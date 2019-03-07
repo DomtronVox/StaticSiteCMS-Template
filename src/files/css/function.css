@@ -5,6 +5,10 @@ body {
     min-height: 100vh;
 }
 
+main img{ max-width:100%; }
+
+
+
 /*##wrapper###*/
 /*  everything between the header and footer falls inside the wrapper*/
 #wrapper {
