@@ -45,9 +45,9 @@ collections: # A list of collections the CMS should be able to edit
             widget: "list"
             fields:
               - {label: "Menu Text", name: "text", widget: "string"} 
-              - {label: "Menu Link (i.e. relative like /about.html or absolute like http://coolsite.org/cool_things.html)", name: "link", widget: "string"} 
+              - {label: "Menu Link", name: "link", widget: "string", hint: "I.E. relative like /about.html or absolute like http://coolsite.org/cool_things.html."} 
               - label: "Sub-Menu Pages and Order"
-                name: "sub-menu_config_list"
+                name: "submenu_config_list"
                 widget: "list"
                 fields:
                   - {label: "Sub-Menu Text", name: "text", widget: "string"} 
