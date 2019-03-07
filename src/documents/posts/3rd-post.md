@@ -9,3 +9,7 @@ collection: posts
 layout: post.pug
 ---
 Goodbye
+
+
+
+![test receipt](/images/test-receipt.png)
