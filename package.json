@@ -1,5 +1,5 @@
 {
-  "name": "farm-staticsite",
+  "name": "staticsite_netlifycms",
   "private": true,
   "dependencies": {
     "jstransformer-markdown": "^1.2.1",
