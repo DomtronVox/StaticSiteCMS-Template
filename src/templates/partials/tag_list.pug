@@ -6,8 +6,8 @@ p
         if tag_list[0]
             each tag in tag_list
                 span(class="post_tag") 
-                    //- A bit of a hack but the line of JS forces 1st letter of each word to be caps with everything else lower case.
-                    a(href="/tags/"+tag.slug+".html") #{tag.name.toLowerCase().replace(/(^| )(\w)/g, function(x) { return x.toUpperCase() })}
+                    //- A bit of a hack. The line of JS forces 1st letter of each word to be caps with everything else lower case.
+                    a(href="/posts/tags/"+tag.slug+".html") #{tag.name.toLowerCase().replace(/(^| )(\w)/g, function(x) { return x.toUpperCase() })}
 
     //- if either test fails we say there are 'None' tags.
         else

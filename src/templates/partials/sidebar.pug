@@ -11,7 +11,7 @@ aside(class="aside_"+positioning.aside_position)
              h2 #{site.posts_name} Tags
              each tag in Object.keys(tags)
                  span(class="post_tag")
-                     a(href="/tags/"+tag+".html") #{tag.toLowerCase().replace(/(^| )(\w)/g, function(x) { return x.toUpperCase() })}
+                     a(href="/posts/tags/"+tags[tag].urlSafe+".html") #{tag.toLowerCase().replace(/(^| )(\w)/g, function(x) { return x.toUpperCase() })}
 
     if site.sidebar_links_list[0]
         section(id="links")

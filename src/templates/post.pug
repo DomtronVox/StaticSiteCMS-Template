@@ -2,9 +2,9 @@ extends base.pug
 
 block content
     article
-        header
+        header(class="post_header")
             h2 #{title}
-            p Pulish Date:
+            p Publish Date:
                 span(class="date")  #{date}
             include partials/tag_list.pug
 
