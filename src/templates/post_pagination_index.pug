@@ -42,21 +42,17 @@ block content
 
     each post in pagination.files
         article(class="post_preview")
-            header(class="post_header") 
-                h1 
-                    a(href=post.path.dhref + post.path.name + ".html") #{post.title}
-
-                p Publish Date:
-                    span(class="date")  #{post.date}
-
-                //- must pull this variable out of individual posts so the tag_list partial can use it
-                - var tag_list = post.tag_list
-                include partials/tag_list.pug
+            //- Must pull several variables out of the post var so partial can use them.
+            - var title = post.title
+            - var title_link = post.path.dhref + post.path.name
+            - var date = post.date
+            - var tag_list = post.tag_list
+            include partials/post_header.pug
 
             p Summery: #{post.summery_text}
 
             span 
-               a(href=post.path.dhref + post.path.name + ".html") Read More
+               a(href=title_link + ".html") Read More
 
     //- add in the post-list pagination navigation
     +pagination_nav

@@ -1,0 +1,32 @@
+
+//-Make sure to define title, date, and tag_list before including this partial. 
+//-  Also optionally title_link if you want the title to link somewhere.
+
+
+header(class="post_header")
+    if title_link
+        h2
+            a(href=title_link + ".html") #{title}
+    else
+        h2 #{title}
+    p 
+        span(class="info_header") Publish Date: 
+        span(class="date")  #{date}
+    p 
+        span(class="info_header") Tags:
+        span(class="tags")
+            if tag_list
+                if tag_list[0]
+                    each tag in tag_list
+                        span(class="post_tag") 
+                            //- A bit of a hack. The JS forces 1st letter of each word 
+                            //-   to be caps with everything else lower case.
+                            a(href="/posts/tags/"+tag.slug+".html") #{tag.name.toLowerCase().replace(/(^| )(\w)/g, function(x) { return x.toUpperCase() })}
+
+            //- if either test fails we say there are 'None' tags.
+                else
+                    span None
+            else
+                span None
+
+br

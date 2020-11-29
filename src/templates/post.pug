@@ -2,11 +2,7 @@ extends base.pug
 
 block content
     article
-        header(class="post_header")
-            h2 #{title}
-            p Publish Date:
-                span(class="date")  #{date}
-            include partials/tag_list.pug
+        include partials/post_header.pug
 
         if put_summery_in_body
             p #{summery_text}
