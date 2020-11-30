@@ -22,36 +22,34 @@ collections: # A list of collections the CMS should be able to edit
           - {label: "Favicon", name: "favicon_image", widget: "image", hint: "The icon that appears in the browser tabs."}
           - {label: "Logo", name: "logo_image", widget: "image", hint: "The image used as the logo."}
           - {label: "Name of Site Posts (Examples: 'Blog' or 'News')", name: "posts_name", widget: "string"}
-          - {label: "Name of Extra Links sidebar (Examples: 'Our Friends' or 'Interesting Links')", name: "sidebar_links_name", widget: "string"}
-          - label: "Sidebar Extra Links"
-            name: "sidebar_links_list"
-            widget: "list"
-            hint: "Leave empty to remove the extra sidebar."
-            fields:
-                  - {label: "Link Text", name: "text", widget: "string"} 
-                  - {label: "Link URL (i.e. relative like /about.html or absolute like http://coolsite.org/cool_things.html)", name: "link", widget: "string"} 
-      - label: "Layout Settings"
-        name: "layout_config"
-        file: "src/documents/config/positioning.json"
-        fields:
-          - {label: "Menu Bar Location", name: "nav_position", widget: "select", default: "top", options: ["top", "in_header", "left", "right"] }
-          - {label: "Sidebar Location", name: "aside_position", widget: "select", default: "right", options: ["right", "left", "off"] }
-      - label: "Main Menu"
+      - label: "Navigation Menu"
         name: "menu_config"
         file: "src/documents/config/menu.json"
         fields:
-          - label: "Menu Pages and Order"
+          - {label: "Menu Bar Location", name: "position", widget: "select", default: "top", options: ["top", "floating (not implemented)", "left", "right"] }
+          - label: "Menu Links and Order"
             name: "menu_config_list"
             widget: "list"
             fields:
               - {label: "Menu Text", name: "text", widget: "string"} 
               - {label: "Menu Link", name: "link", widget: "string", hint: "I.E. relative like /about.html or absolute like http://coolsite.org/cool_things.html."} 
-              - label: "Sub-Menu Pages and Order"
+              - label: "Sub-Menu Links and Order"
                 name: "submenu_config_list"
                 widget: "list"
                 fields:
                   - {label: "Sub-Menu Text", name: "text", widget: "string"} 
                   - {label: "Sub-Menu Link (i.e. relative like /about.html or absolute like http://coolsite.org/cool_things.html)", name: "link", widget: "string"}
+      - label: "Sidebar Content"
+        name: "sidebar_config"
+        file: "src/documents/config/sidebar.json"
+        fields:
+          - {label: "Sidebar Location", name: "position", widget: "select", default: "right", options: ["right", "left", "off"] }
+          - label: "Sidebar Panels and Order"
+            name: "sidebar_config_list"
+            widget: "list"
+            fields:
+              - {label: "Panel Title", name: "title", widget: "string"} 
+              - {label: "Panel Content", name: "content", widget: "markdown"} 
               
   - name: "pages"
     label: "Pages"

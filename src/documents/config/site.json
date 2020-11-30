@@ -6,12 +6,5 @@
   "url": "http://siteurl.com/",
   "favicon_image": "/images/mission-icon.svg",
   "logo_image": "/images/mission-icon.svg",
-  "posts_name": "News",
-  "sidebar_links_name" : "Interesting Links",
-  "sidebar_links_list": [
-    {
-      "text": "Another cool place",
-      "link": "/cool_place.html"
-    }
-  ]
+  "posts_name": "News"
 }

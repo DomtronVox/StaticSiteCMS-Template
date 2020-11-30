@@ -1,4 +1,4 @@
-aside(class="aside_"+positioning.aside_position)
+aside(class="aside_"+sidebar.position)
     if recent_posts[0]
         section(id="recent_posts")
             h2 Recent #{site.posts_name} Posts
@@ -13,11 +13,11 @@ aside(class="aside_"+positioning.aside_position)
                  span(class="post_tag")
                      a(href="/posts/tags/"+tags[tag].urlSafe+".html") #{tag.toLowerCase().replace(/(^| )(\w)/g, function(x) { return x.toUpperCase() })}
 
-    if site.sidebar_links_list[0]
-        section(id="links")
-            h2 #{site.sidebar_links_name}
-            each link in site.sidebar_links_list
-                p
-                    a(href=link.link) #{link.text}
+    //-if site.sidebar_links_list[0]
+    //-    section(id="links")
+    //-        h2 #{site.sidebar_links_name}
+    //-        each link in site.sidebar_links_list
+    //-            p
+    //-                a(href=link.link) #{link.text}
         
         
