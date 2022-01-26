@@ -53,6 +53,7 @@ collections: # A list of collections the CMS should be able to edit
               
   - name: "pages"
     label: "Pages"
+    label_singular: "Page"
     folder: "src/documents"
     create: true
     slug: "{{slug}}"
@@ -68,6 +69,7 @@ collections: # A list of collections the CMS should be able to edit
       
   - name: "posts"
     label: "Posts"
+    label_singular: "Post"
     folder: "src/documents/posts"
     create: true
     slug: "{{slug}}"
