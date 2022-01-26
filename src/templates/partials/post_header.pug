@@ -21,7 +21,7 @@ header(class="post_header")
                         span(class="post_tag") 
                             //- A bit of a hack. The JS forces 1st letter of each word 
                             //-   to be caps with everything else lower case.
-                            a(href="/posts/tags/"+tag.slug+".html") #{tag.name.toLowerCase().replace(/(^| )(\w)/g, function(x) { return x.toUpperCase() })}
+                            a(href="/posts/tag_list/"+tag+".html") #{tag.toLowerCase().replace(/(^| )(\w)/g, function(x) { return x.toUpperCase() })}
 
             //- if either test fails we say there are 'None' tags.
                 else

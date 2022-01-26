@@ -11,19 +11,23 @@ var child = exec('./node_modules/metalsmith/bin/metalsmith',
 
       process.exit();
     }
-
-    console.log("\nListening on http://127.0.0.1:8080")
 });
 
 
 //run server for testing locally
-var nodestatic = require('node-static');
-var staticserver = new nodestatic.Server("./build"); //TODO need to pull this location from settings object in build.js
+var StaticServer = require('static-server');
+var staticserver = new StaticServer({
+  rootPath: './build',            // required, the root of the server file tree
+  port: 8080,               // required, the port to listen
+  /*TODO implement
+  templates: {
+    index: 'foo.html',      // optional, defaults to 'index.html'
+    notFound: '404.html'    // optional, defaults to undefined
+  }*/
+});
 
-require('http').createServer(function (request, response) {
-    request.addListener('end', function () {
-        staticserver.serve(request, response);
-    }).resume();
-}).listen(8080);
+staticserver.start(function () {
+  console.log('Server listening to http://127.0.0.1:'+staticserver.port);
+});
 
 

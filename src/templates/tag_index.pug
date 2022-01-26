@@ -5,7 +5,7 @@ block content
 
     p Below is a listing of all pages with the tag <b>#{tag}</b> from newest to oldest.
 
-    each post in pagination.files
+    each post in taxonomies["tag_list"][term]
         article(class="post_preview")
             //- Must pull several variables out of the post var so partial can use them.
             - var title = post.title
