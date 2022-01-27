@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: DomtronVox/StaticSiteCMS-Template # Path to your Github repository
+  repo: Bend-Hack-n-Slash/BendHacknSlash-Website # Path to your Github repository
   branch: master # Branch to update
 
 media_folder: src/files/images/
@@ -80,11 +80,10 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Publish Date (note not a scheduler, is just the date people see)", name: "date", widget: "datetime", format: "YYYY-MM-DD hh:mm:ss"} 
       - label: "Tags"
-        name: "tag_list"
+        name: "tags"
         widget: "list"
         field: {label: "Tag", name: "tag", widget: "string", pattern: ["^[a-z0-9 &*^%$#@!.]+$", "Tags must be all lower case."]}
 
       #hidden fields are not editable by the user but still show up in the file's front matter
       - {label: "Collection", name: "collection", widget: "hidden", default: "posts"}
-      - {label: "Layout", name: "layout", widget: "hidden", default: "post.pug"}
 
