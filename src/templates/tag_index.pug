@@ -5,13 +5,13 @@ block content
 
     p Below is a listing of all pages with the tag <b>#{tag}</b> from newest to oldest.
 
-    each post in taxonomies["tag_list"][term]
+    each post in taxonomies["tags"][term]
         article(class="post_preview")
             //- Must pull several variables out of the post var so partial can use them.
             - var title = post.title
             - var title_link = post.path.dhref + post.path.name
             - var date = post.date
-            - var tag_list = post.tag_list
+            - var tags = post.tag_list
             include partials/post_header.pug
 
             p Summery: #{post.summery_text}

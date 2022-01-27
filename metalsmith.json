@@ -30,12 +30,16 @@
       "pattern": "**/*.md",
       "namespace": "posts",
       "pages": ["term"],
-      "taxonomies": ["tag_list"]
+      "taxonomies": ["tags"]
     }}
    ,{"metalsmith-filemetadata": [
         {
-            "pattern": "posts/tag_list/**/*.html",
+            "pattern": "posts/tags/**/*.html",
             "metadata": { "layout": "tag_index.pug" }
+        },
+        {
+            "pattern": "posts/**/*.md",
+            "metadata": { "layout": "post.pug" }
         }
    ]}
    ,{"./lib/debug.js":true}
