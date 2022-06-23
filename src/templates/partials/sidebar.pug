@@ -1,4 +1,6 @@
 aside(class="aside_"+sidebar.position)
+
+    //-setup the recent posts section.
     if recent_posts[0]
         section(id="recent_posts")
             h2 Recent #{site.posts_name} Posts
@@ -6,12 +8,25 @@ aside(class="aside_"+sidebar.position)
                 p
                     a(href=post.path.dhref + post.path.name + ".html") #{post.title}
 
-    if tags
-         section(id="tag_cloud")
-             h2 #{site.posts_name} Tags
-             each tag in Object.keys(tags)
-                 span(class="post_tag")
-                     a(href="/posts/tags/"+tags[tag].urlSafe+".html") #{tag.toLowerCase().replace(/(^| )(\w)/g, function(x) { return x.toUpperCase() })}
+    //-Build the tag cloud sidebar section
+    if taxonomies
+    
+        //- get the tags list so we can add them as content
+        - var tags
+        if taxonomies.posts
+            - tags = Object.keys(taxonomies.posts.tags)
+        //-annoyingly taxonomies plugin changes the metadata for their generated pages so we have to handle those slightly differently
+        if taxonomies.tags
+            - tags = Object.keys(taxonomies.tags)
+        
+        if tags
+            section(id="tag_cloud")
+                h2 #{site.posts_name} Tags
+                each tag in tags
+                    span(class="post_tag")
+                        a(href="/posts/tags/"+tag+".html") #{tag}
+                        
+        
 
     //-if site.sidebar_links_list[0]
     //-    section(id="links")

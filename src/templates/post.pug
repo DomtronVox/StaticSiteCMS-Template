@@ -12,8 +12,8 @@ block content
         div(id="post_nav")
           //- Note may be a bit confusing but we have to swap the previous/next nomanclature so newest posts come to the top.
           //- the collection is reverse sorted meaning that the next field is actually showing an older post.
-          if next
-              a(href=next.path.dhref + next.path.name + ".html") < Older Posts
-          span
           if previous
-              a(href=previous.path.dhref + previous.path.name + ".html") Newer Posts >
+              a(href=previous.path.dhref + previous.path.name + ".html") < Older Posts
+          span
+          if next
+              a(href=next.path.dhref + next.path.name + ".html") Newer Posts >
