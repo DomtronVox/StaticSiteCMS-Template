@@ -1,19 +1,20 @@
 {
-  "name": "staticsite_netlifycms",
+  "name": "staticsite_pug_w_netlifycms",
   "private": true,
   "dependencies": {
-    "@metalsmith/collections": "^1.1.0",
-    "@metalsmith/layouts": "^2.4.0",
+    "@metalsmith/collections": "^1.2.1",
+    "@metalsmith/in-place": "^4.5.0",
+    "@metalsmith/layouts": "^2.5.1",
+    "@metalsmith/metadata": "^0.1.0",
     "jstransformer-markdown-it": "^2.1.0",
     "jstransformer-pug": "^0.4.0",
-    "metalsmith": "^2.3.0",
+    "metalsmith": "^2.5.0",
     "metalsmith-assets-improved": "^1.0.1",
-    "metalsmith-filemetadata": "^2.1.0",
-    "metalsmith-in-place": "^4.4.2",
-    "metalsmith-metadata": "0.0.4",
+    "metalsmith-filemetadata": "^3.0.0",
     "metalsmith-pagination": "^1.5.0",
     "metalsmith-paths": "^3.0.1",
-    "metalsmith-taxonomy": "^0.5.0"
+    "metalsmith-taxonomy": "^0.5.0",
+    "toml": "^3.0.0"
   },
   "devDependencies": {
     "static-server": "^2.2.1"

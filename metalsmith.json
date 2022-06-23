@@ -2,17 +2,22 @@
   "source": "src/documents",
   "destination": "build",
   "metadata": {},
+  
   "plugins": [
-    {"metalsmith-metadata": {
-         "nav_bar":"config/menu.json"
-        ,"site":"config/site.json"
-        ,"sidebar":"config/sidebar.json"
+
+    {"@metalsmith/metadata": {
+         "nav_bar":"src/documents/config/menu.json"
+        ,"site":"src/documents/config/site.json"
+        ,"sidebar":"src/documents/config/sidebar.json"
     }}
+
    ,{"metalsmith-assets-improved": {"src":"src/files"}}
+
    ,{"@metalsmith/collections": {
         "recent_posts": {"pattern": "posts/*.md", "sortBy":"date", "limit": 10, "reverse": true, "refer": false},
         "posts": {"sortBy":"date", "reverse": true}
     }}
+
    ,{"metalsmith-pagination": {
       "collections.posts": {
         "perPage": 20,
@@ -25,13 +30,16 @@
         }
       }
     }}
+
    ,{"metalsmith-paths": true }
+
    ,{"metalsmith-taxonomy":{
       "pattern": "**/*.md",
       "namespace": "posts",
       "pages": ["term"],
       "taxonomies": ["tags"]
     }}
+
    ,{"metalsmith-filemetadata": [
         {
             "pattern": "posts/tags/**/*.html",
@@ -42,8 +50,12 @@
             "metadata": { "layout": "post.pug" }
         }
    ]}
+ 
    ,{"./lib/debug.js":true}
-   ,{"metalsmith-in-place": true}
+ 
+   ,{"@metalsmith/in-place": true}
+ 
    ,{"@metalsmith/layouts": {"directory":"src/templates"}}
+  
   ]
 }
