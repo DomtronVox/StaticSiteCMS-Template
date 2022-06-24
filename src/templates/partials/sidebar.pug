@@ -4,9 +4,10 @@ aside(class="aside_"+sidebar.position)
     if recent_posts[0]
         section(id="recent_posts")
             h2 Recent #{site.posts_name} Posts
-            each post in recent_posts
-                p
-                    a(href=post.path.dhref + post.path.name + ".html") #{post.title}
+            div 
+                each post in recent_posts
+                    p
+                        a(href=post.path.dhref + post.path.name + ".html") #{post.title}
 
     //-Build the tag cloud sidebar section
     if taxonomies
@@ -22,9 +23,10 @@ aside(class="aside_"+sidebar.position)
         if tags
             section(id="tag_cloud")
                 h2 #{site.posts_name} Tags
-                each tag in tags
-                    span(class="post_tag")
-                        a(href="/posts/tags/"+tag+".html") #{tag}
+                div
+                    each tag in tags
+                        span(class="post_tag")
+                            a(href="/posts/tags/"+tag+".html") #{tag}
                         
         
 
