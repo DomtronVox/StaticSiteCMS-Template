@@ -51,7 +51,7 @@
         }
    ]}
  
-   ,{"./lib/debug.js":true}
+   ,{"./custom_lib/debug.js":true}
  
    ,{"@metalsmith/in-place": true}
  
