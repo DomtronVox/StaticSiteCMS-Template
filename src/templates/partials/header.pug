@@ -3,3 +3,7 @@ header(id="masthead")
         h1 #{site.title}
         if site.subtitle
             p #{site.subtitle}
+    
+    if nav_bar.position == "header"
+        include nav.pug   
+

@@ -26,7 +26,7 @@ collections: # A list of collections the CMS should be able to edit
         name: "menu_config"
         file: "src/documents/config/menu.json"
         fields:
-          - {label: "Menu Bar Location", name: "position", widget: "select", default: "top", options: ["top", "floating (not implemented)", "left", "right"] }
+          - {label: "Menu Bar Location", name: "position", widget: "select", default: "top", options: ["top", "header", "left", "right"] }
           - label: "Menu Links and Order"
             name: "menu_config_list"
             widget: "list"
