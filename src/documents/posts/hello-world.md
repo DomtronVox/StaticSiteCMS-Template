@@ -13,3 +13,12 @@ tags:
 collection: posts
 ---
 This is my first post. It's so exciting! [Check out my home page.](/index.html)
+
+```rust
+
+pub fn main() -> String {
+
+    println!("test {}", 5);
+
+}
+```

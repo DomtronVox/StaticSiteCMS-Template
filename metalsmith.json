@@ -54,6 +54,11 @@
    ,{"./custom_lib/debug.js":true}
  
    ,{"@metalsmith/in-place": true}
+   
+   ,{"metalsmith-prism": {
+      "lineNumbers": true,
+      "decode": true
+    }}
  
    ,{"@metalsmith/layouts": {"directory":"src/templates"}}
   
