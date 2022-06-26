@@ -54,8 +54,13 @@ nav.nav_top #nav_container > li ul{
 }
 
 /*>nav inside and to the right of header*/
-nav.nav_in_header {
+nav.nav_header #nav_container > li {
+    display: inline-block;
+}
 
+  /*children lists drop down from the main nav items*/
+nav.nav_header #nav_container > li ul{
+    position: absolute; 
 }
 
 /*>nav along left side*/
