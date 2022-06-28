@@ -1,0 +1,33 @@
+meta(property="og:type" content="website")
+
+//- needed because for some reason something is messing with the path var for posts
+if path.href
+    meta(property="og:url" content=site.url+"/"+path.href)
+else
+    meta(property="og:url" content=site.url+"/"+path)
+
+meta(property="og:title" content=title+" - "+site.title  )
+
+//- image set.
+meta(property="og:image" content=site.url+"/"+site.favicon_image)
+link(rel="apple-touch-icon" href=site.url+"/"+site.favicon_image)
+
+//- if it's a blog post we provide the summary text otherwise page title.
+if summery_text
+    meta(property="og:description" content=summery_text)
+    meta(name="description" content=summery_text)
+else
+    meta(property="og:description" content=title)
+    meta(name="description" content=title)
+
+
+
+script(type="application/ld+json").
+  {
+    "@context": "http://schema.org",
+    "@type": "Website",
+    "url": #{site.url+"/"+path},
+    "image": #{site.url+"/"+site.favicon_image},
+    //-"license": "https://github.com/searxng/searx-space/blob/master/LICENSE",
+  }
+
