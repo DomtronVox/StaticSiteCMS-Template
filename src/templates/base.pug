@@ -12,7 +12,8 @@ html(lang="en")
 
   body
     //- Note that if nav bar is set to header, the code for making it so is in the header partial
-    include partials/header.pug
+    block header
+        include partials/header.pug
  
     if nav_bar.position == "top"
         include partials/nav.pug   
